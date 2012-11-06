@@ -1,0 +1,9 @@
+development:
+  access_key_id: AKIAIV4FALPJU575U4EA
+  secret_access_key: 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
+  bucket: 'perfectsearchdesign'
+
+production:
+  access_key_id: AS3 ACCESS KEY
+  secret_access_key: AS3 SECRET KEY
+  bucket: 'perfectsearchdesign'

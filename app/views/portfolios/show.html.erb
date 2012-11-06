@@ -12,7 +12,8 @@
 
 <p>
   <b>Image:</b>
-  <%= @portfolio.image %>
+  <%= image_tag @portfolio.image, :width => 200 %>
+  <%= @portfolio.image.url %>
 </p>
 
 

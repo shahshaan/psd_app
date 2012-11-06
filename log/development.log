@@ -21602,3 +21602,660 @@ ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
   Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
   Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
   Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePortfolios (20121105180628)
+Migrating to AddRankToPortfolio (20121105183348)
+Migrating to AddAttachmentImageToPortfolios (20121105231902)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: Method `t.has_attached_file` in the migration has been deprecated and will be replaced by `t.attachment`. (called from block in up at /Users/shaanshah/psm/websites/perfectsearchdesign.com/psd_app/db/migrate/20121105231902_add_attachment_image_to_portfolios.rb:4)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "portfolios" ADD "image_file_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "portfolios" ADD "image_content_type" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "portfolios" ADD "image_file_size" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "portfolios" ADD "image_updated_at" datetime[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121105231902')
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("portfolios")
+
+
+Started GET "/portfolios/new" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Connecting to database specified by database.yml
+Processing by PortfoliosController#new as HTML
+  Rendered portfolios/_form.html.erb (14.1ms)
+  Rendered portfolios/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 189ms (Views: 109.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/fonts.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /fonts.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /font-awesome.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /responsive.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/theme.css?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /theme.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /bootstrap.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /libs/jquery.min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/portfolios.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /portfolios.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/script.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /script.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-05 17:50:55 -0600
+Served asset /application.js - 304 Not Modified (55ms)
+
+
+Started GET "/portfolios/favicon.ico" for 127.0.0.1 at 2012-11-05 17:50:56 -0600
+Processing by PortfoliosController#show as 
+  Parameters: {"id"=>"favicon"}
+  [1m[36mPortfolio Load (0.4ms)[0m  [1mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1[0m  [["id", "favicon"]]
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
+  app/controllers/portfolios_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.7ms)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2012-11-05 17:51:04 -0600
+Processing by PortfoliosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O7VT3ajBDOGFRV+XShXWYS/GW8wpsv4Kb2breapSVXk=", "portfolio"=>{"name"=>"Holiday Inn Express", "url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ffbc46a93a8 @original_filename="1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"portfolio[image]\"; filename=\"1.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/RackMultipart20121105-4154-1dyd78e>>, "rank"=>""}, "commit"=>"Create Portfolio"}
+Command :: identify -format %wx%h '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: convert '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]' -auto-orient -resize "200x200>" '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm620121105-4154-1sm9fp'
+Command :: file -b --mime '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm620121105-4154-1sm9fp'
+Command :: identify -format %wx%h '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]'
+Command :: convert '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm6.jpg[0]' -auto-orient '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm620121105-4154-18tn8k7'
+Command :: file -b --mime '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4154-1wi4hm620121105-4154-18tn8k7'
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[36mSQL (11.8ms)[0m  [1mINSERT INTO "portfolios" ("created_at", "image", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "name", "rank", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 05 Nov 2012 23:51:04 UTC +00:00], ["image", nil], ["image_content_type", "image/jpeg"], ["image_file_name", "1.jpg"], ["image_file_size", 328630], ["image_updated_at", Mon, 05 Nov 2012 23:51:04 UTC +00:00], ["name", "Holiday Inn Express"], ["rank", nil], ["updated_at", Mon, 05 Nov 2012 23:51:04 UTC +00:00], ["url", ""]]
+[paperclip] Saving attachments.
+[paperclip] saving /portfolios/images/000/000/002/original/1.jpg
+[AWS S3 403 3.644817 1 retries] put_object(:acl=>:public_read,:bucket_name=>"perfectsearchdesign",:content_length=>328630,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: 1.jpg,:key=>"portfolios/images/000/000/002/original/1.jpg") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.3ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4522ms
+
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  app/controllers/portfolios_controller.rb:46:in `block in create'
+  app/controllers/portfolios_controller.rb:45:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started GET "/portfolios/favicon.ico" for 127.0.0.1 at 2012-11-05 17:54:30 -0600
+Processing by PortfoliosController#show as 
+  Parameters: {"id"=>"favicon"}
+  [1m[36mPortfolio Load (0.1ms)[0m  [1mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1[0m  [["id", "favicon"]]
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
+  app/controllers/portfolios_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/portfolios/new" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Connecting to database specified by database.yml
+Processing by PortfoliosController#new as HTML
+  Rendered portfolios/_form.html.erb (14.5ms)
+  Rendered portfolios/new.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 193ms (Views: 112.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /bootstrap.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /responsive.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /font-awesome.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/fonts.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /fonts.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/theme.css?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /theme.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /bootstrap.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /libs/jquery.min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/portfolios.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /portfolios.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/script.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /script.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-05 17:54:47 -0600
+Served asset /application.js - 304 Not Modified (50ms)
+
+
+Started GET "/portfolios/favicon.ico" for 127.0.0.1 at 2012-11-05 17:54:48 -0600
+Processing by PortfoliosController#show as 
+  Parameters: {"id"=>"favicon"}
+  [1m[36mPortfolio Load (0.3ms)[0m  [1mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1[0m  [["id", "favicon"]]
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
+  app/controllers/portfolios_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2012-11-05 17:54:55 -0600
+Processing by PortfoliosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O7VT3ajBDOGFRV+XShXWYS/GW8wpsv4Kb2breapSVXk=", "portfolio"=>{"name"=>"Holiday Inn Express", "url"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff599ef0718 @original_filename="1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"portfolio[image]\"; filename=\"1.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/RackMultipart20121105-4167-tpsqch>>, "rank"=>""}, "commit"=>"Create Portfolio"}
+Command :: identify -format %wx%h '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: convert '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]' -auto-orient -resize "200x200>" '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm20121105-4167-1i2nq6o'
+Command :: file -b --mime '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm20121105-4167-1i2nq6o'
+Command :: identify -format %wx%h '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: identify -format %m '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]'
+Command :: convert '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm.jpg[0]' -auto-orient '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm20121105-4167-xz5mxt'
+Command :: file -b --mime '/var/folders/pl/3_wbtjn934qb_f4dm87x9w3r0000gn/T/120121105-4167-1fngcnm20121105-4167-xz5mxt'
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[36mSQL (8.9ms)[0m  [1mINSERT INTO "portfolios" ("created_at", "image", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "name", "rank", "updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 05 Nov 2012 23:54:56 UTC +00:00], ["image", nil], ["image_content_type", "image/jpeg"], ["image_file_name", "1.jpg"], ["image_file_size", 328630], ["image_updated_at", Mon, 05 Nov 2012 23:54:55 UTC +00:00], ["name", "Holiday Inn Express"], ["rank", nil], ["updated_at", Mon, 05 Nov 2012 23:54:56 UTC +00:00], ["url", ""]]
+[paperclip] Saving attachments.
+[paperclip] saving /portfolios/images/000/000/002/original/1.jpg
+[AWS S3 200 2.785102 0 retries] put_object(:acl=>:public_read,:bucket_name=>"perfectsearchdesign",:content_length=>328630,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: 1.jpg,:key=>"portfolios/images/000/000/002/original/1.jpg")  
+
+[paperclip] saving /portfolios/images/000/000/002/thumb/1.jpg
+[AWS S3 200 0.233523 0 retries] put_object(:acl=>:public_read,:bucket_name=>"perfectsearchdesign",:content_length=>21280,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: 120121105-4167-1fngcnm20121105-4167-1i2nq6o,:key=>"portfolios/images/000/000/002/thumb/1.jpg")  
+
+[paperclip] saving /portfolios/images/000/000/002/medium/1.jpg
+[AWS S3 200 1.964126 0 retries] put_object(:acl=>:public_read,:bucket_name=>"perfectsearchdesign",:content_length=>324766,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: 120121105-4167-1fngcnm20121105-4167-xz5mxt,:key=>"portfolios/images/000/000/002/medium/1.jpg")  
+
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/portfolios/2
+Completed 302 Found in 5819ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/portfolios/2" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (0.5ms)[0m  [1mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered portfolios/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fonts.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /fonts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/theme.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /theme.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /libs/jquery.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/portfolios.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /portfolios.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/script.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /script.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/portfolios/img/topseo.gif" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+
+ActionController::RoutingError (No route matches [GET] "/portfolios/img/topseo.gif"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/portfolios/img/show/logo.png" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+
+ActionController::RoutingError (No route matches [GET] "/portfolios/img/show/logo.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/font/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.woff"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/font/fontawesome-webfont.ttf" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.ttf"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/font/fontawesome-webfont.svg" for 127.0.0.1 at 2012-11-05 17:55:01 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.svg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/portfolios/favicon.ico" for 127.0.0.1 at 2012-11-05 17:55:02 -0600
+Processing by PortfoliosController#show as 
+  Parameters: {"id"=>"favicon"}
+  [1m[35mPortfolio Load (0.1ms)[0m  SELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1  [["id", "favicon"]]
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
+  app/controllers/portfolios_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started GET "/portfolios/2" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered portfolios/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fonts.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /fonts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /font-awesome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/theme.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /theme.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /libs/jquery.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/portfolios.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /portfolios.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/script.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /script.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/portfolios/img/show/logo.png" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+
+ActionController::RoutingError (No route matches [GET] "/portfolios/img/show/logo.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/portfolios/img/topseo.gif" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+
+ActionController::RoutingError (No route matches [GET] "/portfolios/img/topseo.gif"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/font/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.woff"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/font/fontawesome-webfont.ttf" for 127.0.0.1 at 2012-11-05 17:55:17 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.ttf"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/font/fontawesome-webfont.svg" for 127.0.0.1 at 2012-11-05 17:55:18 -0600
+
+ActionController::RoutingError (No route matches [GET] "/font/fontawesome-webfont.svg"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/portfolios/favicon.ico" for 127.0.0.1 at 2012-11-05 17:55:18 -0600
+Processing by PortfoliosController#show as 
+  Parameters: {"id"=>"favicon"}
+  [1m[35mPortfolio Load (0.1ms)[0m  SELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT 1  [["id", "favicon"]]
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Portfolio with id=favicon):
+  app/controllers/portfolios_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
