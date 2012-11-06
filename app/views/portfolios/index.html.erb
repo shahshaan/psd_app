@@ -1,27 +1,140 @@
-<h1>Listing portfolios</h1>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h1>Listing portfolios</h1>
+  <p><%= ENV['AMAZONS3_SECRET_ACCESS_KEY'] %></p>
 
-<% @portfolios.each do |portfolio| %>
-  <tr>
-    <td><%= portfolio.name %></td>
-    <td><%= portfolio.url %></td>
-    <td><%= portfolio.image %></td>
-    <td><%= link_to 'Show', portfolio %></td>
-    <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-    <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<br />
+  <% @portfolios.each do |portfolio| %>
+    <tr>
+      <td><%= portfolio.name %></td>
+      <td><%= portfolio.url %></td>
+      <td><%= portfolio.image %></td>
+      <td><%= link_to 'Show', portfolio %></td>
+      <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+      <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<%= link_to 'New Portfolio', new_portfolio_path %>
+  <br />
+
+  <%= link_to 'New Portfolio', new_portfolio_path %>
+
+      <div id="content" role="main">
+
+                  <section id="promo" class="section alt">
+              <div class="container">
+                  <div id="myCarousel" class="carousel slide">
+                      <!-- Carousel items -->
+                      <div class="carousel-inner">
+                          <div class="item">
+                              <div class="row-fluid">                        
+                                  <div class="hero-unit pull-center">
+                                      <blockquote class="blockquote-fancy blockquote-fancy-small span12">
+                                          <div class="blockquote-img">
+                                              <img src="img/show/debteye.jpg" alt="">    
+                                          </div>
+                                          <p class="pull-center">
+                                              <font size="">The Perfect Search Media team are true experts in data analysis, segmentation, and optimization. Their emphasis on testing all strategies has resonated with our firm beyond our online traffic efforts. They are also great to work with and have gone above and beyond to help us meet our company goals.
+                                              <a class="pull-center" href="#">John Sun, CEO</a></font>
+                                          </p> 
+                                      </blockquote>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="active item">
+                              <div class="row-fluid">                        
+                                  <div class="hero-unit pull-center">
+                                      <blockquote class="blockquote-fancy blockquote-fancy-small span12">
+                                          <div class="blockquote-img">
+                                              <img src="img/show/sandboxindustries.jpg" alt="">    
+                                          </div>
+                                          <p class="pull-center">
+                                              <font size="">We consider Perfect Search Design an integral part of the team of each of our startups when it comes to traffic strategy.  They ramp up quickly and instantly provide valuable expertise that enables our startups to efficiently drive traffic and acquire users.
+                                              <a class="pull-center" href="#">Millie Tadewaldt, Vice President</a></font>
+                                          </p> 
+                                      </blockquote>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="row-fluid">                        
+                                  <div class="hero-unit pull-center">
+                                      <blockquote class="blockquote-fancy blockquote-fancy-small span12">
+                                          <div class="blockquote-img">
+                                              <img src="img/show/bayru.jpg" alt="">    
+                                          </div>
+                                          <p class="pull-center">
+                                              <font size="">Perfect Search greatly exceeded our expectations by helping us improve year-over-year growth from -34% to 84% in our first four months...I particularly liked Perfect Search's communication and reporting protocols.  We highly recommend them!</font>
+                                              <a class="pull-center" href="#">Aaron Block, CEO</a>
+                                          </p>
+                                      </blockquote>
+                                  </div>
+                              </div>
+                          </div>                  
+                      </div>
+                      <!-- Carousel nav -->
+                      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                  </div>
+                  
+              </div>
+          </section>
+
+          <section class="section">
+              <div class="container">
+                  <div class="page-header">
+                      <h1>
+                          Our portfolio <small></small>
+                      </h1>
+                  </div>
+                  <ul class="thumbnails bordered thumbnail-list">
+                    <% @portfolios.each do |portfolio| %>
+                      <li class="span4">
+                          <a href="<%= "#{root_url}portfolios/#{portfolio.id}" %>">
+                              <figure class="thumbnail-figure">                                
+                                  <img src="<%= portfolio.image %>" alt="">
+                                  <figcaption class="thumbnail-title"></figcaption>            
+                              </figure>
+                          </a>                    
+                      </li> 
+                    <% end %>                    
+                  </ul>
+              </div>
+          </section>
+
+          <section class="section alt">
+              <div class="container">
+                  <div class="hero-unit pull-center">
+                      <h1>Got a question?</h1>
+                      <p>
+                        Want to work with us to move your business to the next level? Well, dont be afraid.
+                      </p>
+                      <a href="contact_us.html" class="btn btn-primary btn-large">
+                        contact us
+                </a>
+                  </div>
+              </div>
+          </section>
+
+      </div>
+
+
+
+</body>
+</html>
+
+

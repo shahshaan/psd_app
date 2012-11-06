@@ -8,12 +8,9 @@ class Portfolio < ActiveRecord::Base
   					},
   					:storage => :s3,
   					:bucket => 'perfectsearchdesign',
-  					:s3_credentials => Rails.root.join('config', 's3.yml')
-  					# :path =. 
-
-   # has_attached_file :image, :styles => { :medium => "640x640>" },
-   #                  :storage => :s3,
-   #                  :bucket => 'BUCKET NAME',
-   #                  :s3_credentials => Rails.root.join('config', 's3.yml')
+  					:s3_credentials => {
+  						:access_key_id => ENV['AMAZONS3_ACCESS_KEY'],
+  						:secret_access_key => ENV['AMAZONS3_SECRET_ACCESS_KEY']
+  					}
 
 end
